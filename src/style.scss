@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+
+* {
+  font-family: "Roboto";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.v-application__wrap {
+  background: rgba($color: #302f2f, $alpha: 0.5);
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow: hiden;
+  background-color: rgba($color: #302f2f, $alpha: 0.5);
+  border-radius: 8px;
+  &__wrapper {
+    position: absolute;
+    min-width: 390px;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    padding: 40px;
+    background: rgba($color: #cecbcb, $alpha: 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow-y: auto;
+  }
+  &__close {
+    position: absolute;
+    bottom: 32px;
+    right: -105%;
+    font-size: 30px;
+    color: #000;
+    opacity: 0.5;
+    font-weight: 700;
+    border: none;
+    background: url(./assets/cross.png) center center/cover no-repeat;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+  }
+  &__title {
+    color: #5e5c5c;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+  &__wrapper-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+}
+
+.small.v-btn {
+  width: 20%;
+  height: 30px;
+  margin-left: 10px;
+  background: #c7c6c6;
+  transition: 0.7s;
+  .v-btn__content {
+    font-size: 12px;
+    color: #5e5c5c;
+  }
+  &:hover {
+    box-shadow: 0 0 0 1px #9f9b9b;
+  }
+}
+
+.v-btn.big {
+  height: 40px;
+  width: 100px;
+  background: #c7c6c6;
+  .v-btn__content {
+    font-size: 18px;
+    color: #5e5c5c;
+  }
+}
+
+.tasks {
+  position: relative;
+  min-width: 400px;
+  margin: 0 auto;
+  top: 50%;
+  transform: translate(0, -50%);
+  background: rgba(237, 232, 232, 0.5);
+  border-radius: 8px;
+  padding: 30px;
+  &__title {
+    text-align: center;
+    &_left {
+      margin-top: 25px;
+      text-align: left;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #5e5c5c;
+}
+
+.wrapper__btn {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.list {
+  list-style-type: none;
+  font-size: 18px;
+  line-height: 18px;
+  color: #5e5c5c;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  &__item {
+    max-width: 350px;
+    min-height: 30px;
+    margin-top: 8px;
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    background: #d6d2d2;
+    border-radius: 4px;
+  }
+  &__editing {
+    text-overflow: ellipsis;
+    min-width: 250px;
+    background: #d6d2d2;
+    border: none;
+    border-bottom: 1px solid #5e5c5c;
+    outline: none;
+    font-size: 18px;
+    line-height: 18px;
+    color: #5e5c5c;
+  }
+  &__task {
+    padding-right: 10px;
+    background: #d6d2d2;
+    max-width: 270px;
+    padding-right: 10px;
+  }
+  &__btn {
+    width: 16px;
+    height: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s;
+    background: url(./assets/trash.png) center center/cover no-repeat;
+    &:hover {
+      transform: scale(1.1);
+    }
+    &-correction {
+      background: url(./assets/pen.png) center center/cover no-repeat;
+      margin-right: 10px;
+    }
+    &-close {
+      width: 12px;
+      height: 12px;
+      font-size: 18px;
+      background: url(./assets/cross.png) center center/cover no-repeat;
+    }
+    &-star {
+      display: flex;
+      width: 12px;
+      height: 12px;
+      background: none;
+      stroke: black;
+      fill: transparent;
+      &:hover {
+        transform: scale(1.2);
+      }
+      &__active {
+        fill: rgb(243, 148, 6);
+      }
+    }
+  }
+  .check {
+    background: url(./assets/check.png) center center/cover no-repeat;
+    margin-right: 10px;
+  }
+}
+
+.v-divider {
+  color: #302f2f;
+  margin-top: 15px;
+}
+
+.v-checkbox {
+  cursor: pointer;
+  margin-right: 7px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #5e5c5c;
+  background: url(./assets/check.png) center center no-repeat;
+  background-size: 0px;
+  transition: 0.2s;
+  border-radius: 50%;
+  appearance: none;
+  &:hover {
+    border-color: #dc8e8e;
+    box-shadow: 0 0 0 1px #efa5a5;
+  }
+}
+
+.wrapper-donelist {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .checked {
+    background: url(@/assets/check.png) center center no-repeat;
+    background-size: 12px;
+  }
+  .completed {
+    text-decoration: line-through;
+  }
+}
